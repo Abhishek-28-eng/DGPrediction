@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score,classification_report
+from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.cluster import KMeans
 from sklearn.ensemble import VotingClassifier, RandomForestClassifier
@@ -23,8 +23,9 @@ import OverallGr
 overall_growth_df = OverallGr.overall_growth_df
 
 final_merged_with_10th = Tenth_final_Interest.final_merged_with_10th
-# Function to compute percentage of interest for each subject
-def compute_interest_percentage(row):
+
+# Function to compute interest based on Computed_Final_Interests and overall growth rates
+def compute_interest(row):
     # Extract growth rates for subjects in Computed_Final_Interests
     growth_rates = row.filter(like="_Overall_Growth")
     computed_interests = row["Computed_Final_Interests"].split(", ")
@@ -40,26 +41,26 @@ def compute_interest_percentage(row):
     if not subject_growth:
         return {}
     
-    # Normalize growth rates to percentages
-    max_growth = max(subject_growth.values())
-    percentage_interests = {subject: (rate / max_growth) * 100 for subject, rate in subject_growth.items()}
-    return percentage_interests
+    # Return subjects with their growth rates
+    return subject_growth
 
-# Apply the function to compute interest percentages
-merged_df["Interest_Percentages"] = merged_df.apply(compute_interest_percentage, axis=1)
+# Apply the function to compute interest
+merged_df["Interest_Subjects"] = merged_df.apply(compute_interest, axis=1)
 
-# Expand percentages into separate columns for better readability
-percentages_df = merged_df["Interest_Percentages"].apply(pd.Series)
+# Expand the interest subjects into separate columns
+interest_df = merged_df["Interest_Subjects"].apply(pd.Series)
 
 # Combine with the original DataFrame
-result_df = pd.concat([merged_df, percentages_df], axis=1)
-
+result_df = pd.concat([merged_df, interest_df], axis=1)
 
 # Save or view the result
-output_df = result_df[["Unique_ID", "Computed_Final_Interests", "Interest_Percentages"] + percentages_df.columns.tolist()] #.to_csv("interest_percentages2.csv", index=False)
-output_df
+output_df = result_df[["Unique_ID", "Computed_Final_Interests"] + interest_df.columns.tolist()]
+
+# Fill null values with 0 (if needed)
+output_df = output_df.fillna(0)
+
+# Save the result to a CSV file
+#output_df.to_csv("filtered_subjects_growth.csv", index=False)
 
 # Display a sample of the result
-# result_df[["Unique_ID", "Computed_Final_Interests", "Interest_Percentages"]]
-
-
+print(output_df)
