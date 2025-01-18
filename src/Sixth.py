@@ -28,7 +28,7 @@ df2_6th.iloc[:, 1:] = df2_6th.iloc[:, 1:].apply(pd.to_numeric, errors="coerce")
 # Function to find top and second-top subjects excluding Unique_ID
 def find_top_interests(row):
     # Exclude the Unique_ID column
-    subject_marks = {subject: mark for subject, mark in row.items() if subject != "Unique_ID"}
+    subject_marks = {subject: mark for subject, mark in row.items() if subject != "Student_id"}
     
     # Find the highest and second-highest marks
     unique_marks = sorted(set(subject_marks.values()), reverse=True)

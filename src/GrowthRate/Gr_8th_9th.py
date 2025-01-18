@@ -20,7 +20,7 @@ subjects_8_to_9 = ["Marathi", "Urdu", "Hindi", "English", "History", "Science",
 # Calculate Growth 8th to 9th
 year = 8
 next_year = 9
-growth_8_to_9 = {"Unique_ID": df_growthrate["Unique_ID"]}  # Start with Unique_ID
+growth_8_to_9 = {"Student_id": df_growthrate["Student_id"]}  # Start with Unique_ID
 
 for subject in subjects_8_to_9:
     col_8 = f"{subject}_{year}"

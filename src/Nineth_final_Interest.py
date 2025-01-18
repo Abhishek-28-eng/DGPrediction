@@ -20,8 +20,8 @@ df_9th["Interest"] = df_9th["Interest"].astype(str)
 # Merge the existing final_merged_with_8th with the 9th standard dataset
 final_merged_with_9th = pd.merge(
     final_merged_with_8th,
-    df_9th[["Unique_ID", "Interest"]],
-    on="Unique_ID",
+    df_9th[["Student_id", "Interest"]],
+    on="Student_id",
     how="inner",
     suffixes=("", "_9th")
 )

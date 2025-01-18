@@ -21,7 +21,7 @@ subjects_9_to_10 = ["Marathi", "Urdu", "Hindi", "English", "History", "Science",
 # Calculate Growth 9th to 10th
 year = 9
 next_year = 10
-growth_9_to_10 = {"Unique_ID": df_growthrate["Unique_ID"]}  # Start with Unique_ID
+growth_9_to_10 = {"Student_id": df_growthrate["Student_id"]}  # Start with Unique_ID
 
 for subject in subjects_9_to_10:
     col_9 = f"{subject}_{year}"

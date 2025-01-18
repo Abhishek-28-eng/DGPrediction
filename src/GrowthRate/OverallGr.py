@@ -17,16 +17,16 @@ from Gr_8th_9th import growth_8_to_9_df
 from Gr_9th_10th import growth_9_to_10_df
 
 # Merge all growth DataFrames on Unique_ID
-overall_growth_df = growth_5_to_6_df.merge(growth_6_to_7_df, on="Unique_ID", how="outer") \
-                                    .merge(growth_7_to_8_df, on="Unique_ID", how="outer") \
-                                    .merge(growth_8_to_9_df, on="Unique_ID", how="outer") \
-                                    .merge(growth_9_to_10_df, on="Unique_ID", how="outer")
+overall_growth_df = growth_5_to_6_df.merge(growth_6_to_7_df, on="Student_id", how="outer") \
+                                    .merge(growth_7_to_8_df, on="Student_id", how="outer") \
+                                    .merge(growth_8_to_9_df, on="Student_id", how="outer") \
+                                    .merge(growth_9_to_10_df, on="Student_id", how="outer")
 
 # Fill NaN values with 0 for all growth columns
 overall_growth_df = overall_growth_df.fillna(0)
 
 # Initialize a dictionary to store overall growth rates
-overall_growth = {"Unique_ID": overall_growth_df["Unique_ID"]}
+overall_growth = {"Student_id": overall_growth_df["Student_id"]}
 
 # List of general subjects across multiple years
 general_subjects = ["Marathi", "Urdu", "Hindi", "English", "History", "Science", 
@@ -55,7 +55,7 @@ for subject in special_subjects:
 overall_growth_df = pd.DataFrame(overall_growth)
 
 # Save the result to a CSV file
-#overall_growth_df.to_csv("Overall_Growth_5_to_10.csv", index=False)
+overall_growth_df.to_csv("Overall_Growth_5_to_10.csv", index=False)
 
 # Display the result
 print("Overall Growth Rates:")

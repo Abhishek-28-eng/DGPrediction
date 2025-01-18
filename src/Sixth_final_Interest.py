@@ -14,11 +14,11 @@ from Fifth import df2_5th
 from Sixth import df2_6th
 
 # Ensure the datasets have a unique identifier column (e.g., "Unique_ID")
-if "Unique_ID" not in df2_5th.columns or "Unique_ID" not in df2_6th.columns:
-    raise ValueError("Both datasets must contain a 'Unique_ID' column.")
+if "Student_id" not in df2_5th.columns or "Student_id" not in df2_6th.columns:
+    raise ValueError("Both datasets must contain a 'Student_id' column.")
 
 # Merge the datasets on the Unique_ID column
-merged_df = pd.merge(df2_5th[["Unique_ID", "Interest"]], df2_6th[["Unique_ID", "Interest"]], on="Unique_ID", suffixes=("_5th", "_6th"))
+merged_df = pd.merge(df2_5th[["Student_id", "Interest"]], df2_6th[["Student_id", "Interest"]], on="Student_id", suffixes=("_5th", "_6th"))
 
 # Function to handle interests based on conditions
 def handle_interests(row):

@@ -20,8 +20,8 @@ df_8th["Interest"] = df_8th["Interest"].astype(str)
 # Merge the existing final_merged_df with the 8th standard dataset
 final_merged_with_8th = pd.merge(
     merged_df7th, 
-    df_8th[["Unique_ID", "Interest"]], 
-    on="Unique_ID", 
+    df_8th[["Student_id", "Interest"]], 
+    on="Student_id", 
     how="inner", 
     suffixes=("", "_8th")  # Added suffix to avoid name conflicts
 )

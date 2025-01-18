@@ -17,7 +17,7 @@ subjects_5_to_8 = ["Marathi", "Urdu", "Hindi", "English", "History", "Science",
 
 year = 6
 next_year = 7
-growth_6_to_7 = {"Unique_ID": df_growthrate["Unique_ID"]}  # Start with Unique_ID
+growth_6_to_7 = {"Student_id": df_growthrate["Student_id"]}  # Start with Unique_ID
 for subject in subjects_5_to_8:
     if f"{subject}_{year}" in df_growthrate.columns and f"{subject}_{next_year}" in df_growthrate.columns:
         condition = df_growthrate[f"{subject}_{year}"].notna() & df_growthrate[f"{subject}_{next_year}"].notna()

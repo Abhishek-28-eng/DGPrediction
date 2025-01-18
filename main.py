@@ -14,7 +14,7 @@ def index():
         student_id = request.form.get("student_id").strip()  # Remove extra spaces
         
         # Filter the DataFrame for the given Unique_ID
-        student_data = output_df.loc[output_df["Unique_ID"] == student_id]
+        student_data = output_df.loc[output_df["Student_id"] == student_id]
         
         if student_data.empty:
             # If no matching Unique_ID is found
