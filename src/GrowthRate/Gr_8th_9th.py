@@ -54,4 +54,4 @@ growth_8_to_9_df
 
 
 # Optionally, save the growth to CSV file
-#growth_8_to_9_df.to_csv("Growth_8_to_9.csv", index=False)
+growth_8_to_9_df.to_csv("Growth_8_to_9.csv", index=False)

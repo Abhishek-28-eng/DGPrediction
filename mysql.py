@@ -20,11 +20,11 @@ def store_data_in_mysql(df):
         for index, row in df.iterrows():
             # SQL query to insert data
             insert_query = """
-                INSERT INTO Prediction (Unique_id, Computed_Final_Interests, Marathi, Urdu, Hindi, English, History, Science, Geography, Drawing, Sports, Environmental_Studies, Algebra, Geometry, Computer, Defence)
+                INSERT INTO Prediction (Student_id, Computed_Final_Interests, Marathi, Urdu, Hindi, English, History, Science, Geography, Drawing, Sports, Environmental_Studies, Algebra, Geometry, Computer, Defence)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             cursor.execute(insert_query, (
-                row['Unique_ID'],
+                row['Student_id'],
                 row['Computed_Final_Interests'],
                 row.get('Marathi', 0),
                 row.get('Urdu', 0),

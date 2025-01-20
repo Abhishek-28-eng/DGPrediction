@@ -48,4 +48,4 @@ print("Growth 9th to 10th:")
 growth_9_to_10_df
 
 # Optionally, save the growth to CSV file
-#growth_9_to_10_df.to_csv("Growth_9_to_10.csv", index=False)
+growth_9_to_10_df.to_csv("Growth_9_to_10.csv", index=False)

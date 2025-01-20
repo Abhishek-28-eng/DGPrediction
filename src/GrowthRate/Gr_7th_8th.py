@@ -28,7 +28,7 @@ for subject in subjects_5_to_8:
         growth_7_to_8[f"{subject}_Growth_{year}_to_{next_year}"] = np.nan
 
 growth_7_to_8_df = pd.DataFrame(growth_7_to_8)
-#growth_5_to_6_df.to_csv("Growth_7_to_8.csv", index=False)
+growth_7_to_8_df.to_csv("Growth_7_to_8.csv", index=False)
 print("Growth 7th to 8th:")
 #print(growth_7_to_8_df.head())
 growth_7_to_8_df

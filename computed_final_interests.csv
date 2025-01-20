@@ -1,5 +1,5 @@
 Student_id,Final_Interests_10th,Computed_Final_Interests
-S2025001,"Drawing, Environmental Studies, Urdu","Urdu, Environmental Studies"
+S2025001,"Drawing, Environmental Studies, Urdu","Urdu, Drawing, Environmental Studies"
 S2025002,"Algebra, Sanskrit",Algebra
 S2025003,"Defence, History",History
 S2025004,"Geography, Science",Geography
@@ -23,7 +23,7 @@ S2025021,"Computer, Defence, Geography","Geography, Computer, Defence"
 S2025022,"Sanskrit, Science",Science
 S2025023,"Environmental Studies, Sanskrit",Environmental Studies
 S2025024,"Drawing, Geography",Drawing
-S2025025,"Computer, Drawing, English, Geography, Sanskrit","English, Geography, Computer"
+S2025025,"Computer, Drawing, English, Geography, Sanskrit","English, Geography, Drawing, Computer"
 S2025026,"English, Geography, Science","English, Science, Geography"
 S2025027,"Geography, History","History, Geography"
 S2025028,"Hindi, Marathi","Marathi, Hindi"
