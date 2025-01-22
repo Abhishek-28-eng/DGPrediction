@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import sys
+import os
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -11,12 +13,18 @@ from sklearn.cluster import KMeans
 from sklearn.ensemble import VotingClassifier, RandomForestClassifier
 from xgboost import XGBClassifier
 
-df=pd.read_csv("Data/6th_manual_ds.csv")
-df
+# Add module paths and import the host module
+sys.path.append('./Database')
+import sixthdb
+
+# Load the fifth_std dataframe
+df = sixthdb.sixth_std
+
+
 
 df.dtypes
 
-df2_6th = df.drop(['Student Name'], axis=1)
+df2_6th = df.drop(['Student_Name'], axis=1)
 df2_6th
 
 # df2_6th.insert(0, 'Unique_ID', [f"stud_{i}" for i in range(1, len(df2_6th) + 1)])

@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import sys
+import os
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -11,12 +13,16 @@ from sklearn.cluster import KMeans
 from sklearn.ensemble import VotingClassifier, RandomForestClassifier
 from xgboost import XGBClassifier
 
-data_8th=pd.read_csv("Data/8th_manual_ds.csv")
-data_8th
+# Add module paths and import the host module
+sys.path.append('./Database')
+import eightdb
+
+# Load the fifth_std dataframe
+data_8th = eightdb.eight_std
 
 data_8th.dtypes
 
-df_8th = data_8th.drop(['Student Name'], axis=1)
+df_8th = data_8th.drop(['Student_Name'], axis=1)
 df_8th
 
 # df_8th.insert(0, 'Unique_ID', [f"stud_{i}" for i in range(1, len(df_8th) + 1)])

@@ -1,4 +1,4 @@
-Student_id,Student Name,Marathi,Urdu,Hindi,English,History,Science,Geography,Drawing,Sports,Environmental Studies,Math,Computer
+Student_id,Student_Name,Marathi,Urdu,Hindi,English,History,Science,Geography,Drawing,Sports,Environmental_Studies,Math,Computer
 S2025001,Adhav Aarya Sunil ,45,89,44,67,70,54,60,89,52,81,79,80
 S2025002,Singh Ankit Raju,60,50,46,69,58,72,75,60,50,55,90,60
 S2025003,Faujdar Krishna Ramanan,55,69,80,55,50,77,54,67,57,59,70,74
@@ -28,3 +28,4 @@ S2025026,Kumbhare Dnyaneshwar Raj,51,55,67,86,60,86,45,60,72,65,77,50
 S2025027,Kanakala Janhavi Saurabh,51,63,65,74,81,55,65,77,54,67,52,70
 S2025028,Parmar Narayana Amitesh,56,59,70,69,56,59,65,78,50,81,90,80
 S2025030,Maurya Vibhavi Tarun,50,61,46,68,89,55,64,77,57,80,67,55
+S2025031,Raj Malotra,79,59,81,78,68,70,80,92,73,84,86,80

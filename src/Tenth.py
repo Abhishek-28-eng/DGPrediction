@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import sys
+import os
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -11,12 +13,16 @@ from sklearn.cluster import KMeans
 from sklearn.ensemble import VotingClassifier, RandomForestClassifier
 from xgboost import XGBClassifier
 
-data_10th=pd.read_csv("Data/10th_manual_ds.csv")
-data_10th
+# Add module paths and import the host module
+sys.path.append('./Database')
+import tenthdb
+
+# Load the fifth_std dataframe
+data_10th = tenthdb.tenth_std
 
 data_10th.dtypes
 
-df_10th = data_10th.drop(['Student Name'], axis=1)
+df_10th = data_10th.drop(['Student_Name'], axis=1)
 df_10th
 
 # df_10th.insert(0, 'Unique_ID', [f"stud_{i}" for i in range(1, len(data_10th) + 1)])
