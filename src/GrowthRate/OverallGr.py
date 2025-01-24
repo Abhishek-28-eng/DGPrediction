@@ -55,7 +55,7 @@ for subject in special_subjects:
 overall_growth_df = pd.DataFrame(overall_growth)
 
 # Save the result to a CSV file
-overall_growth_df.to_csv("Overall_Growth_5_to_10.csv", index=False)
+#overall_growth_df.to_csv("Overall_Growth_5_to_10.csv", index=False)
 
 # Display the result
 print("Overall Growth Rates:")

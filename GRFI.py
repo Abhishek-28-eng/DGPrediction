@@ -77,7 +77,7 @@ def compute_final_interests(row, threshold=0.01):
 merged_df["Computed_Final_Interests"] = merged_df.apply(compute_final_interests, axis=1)
 
 # Save the result to a CSV file
-merged_df[["Student_id", "Final_Interests_10th", "Computed_Final_Interests"]].to_csv("computed_final_interests.csv", index=False)
+merged_df[["Student_id", "Final_Interests_10th", "Computed_Final_Interests"]]#.to_csv("computed_final_interests.csv", index=False)
 
 # Display a sample of the result
 print(merged_df[["Student_id", "Final_Interests_10th", "Computed_Final_Interests"]].head(10))

@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import sys
+import os
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -11,12 +13,16 @@ from sklearn.cluster import KMeans
 from sklearn.ensemble import VotingClassifier, RandomForestClassifier
 from xgboost import XGBClassifier
 
-data_7th=pd.read_csv("Data/7th_manual_ds.csv")
-data_7th
+# Add module paths and import the host module
+sys.path.append('./Database')
+import seventhdb
+
+# Load the fifth_std dataframe
+data_7th = seventhdb.seventh_std
 
 data_7th.dtypes
 
-df_7th = data_7th.drop(['Student Name'], axis=1)
+df_7th = data_7th.drop(['Student_Name'], axis=1)
 df_7th
 
 # df_7th.insert(0, 'Unique_ID', [f"stud_{i}" for i in range(1, len(df_7th) + 1)])

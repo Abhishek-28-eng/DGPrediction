@@ -13,9 +13,12 @@ from xgboost import XGBClassifier
 from Growthrate import df_growthrate
 
 # Define the subjects present in both 8th and 9th standards
-# Subjects present in both 8th and 9th (modify as needed)
+# Define the subjects present in both 8th and 9th standards
 subjects_8_to_9 = ["Marathi", "Urdu", "Hindi", "English", "History", "Science", 
                    "Geography", "Drawing", "Sports", "Environmental Studies", "Algebra", "Geometry", "Computer", "Defence"]
+
+# Load the growth data (assuming it's in a DataFrame named df_growthrate)
+# Assuming df_growthrate has the columns: ["Student_id", "Marathi_8", "Marathi_9", ... "Defence_9", ...]
 
 # Calculate Growth 8th to 9th
 year = 8
@@ -27,31 +30,20 @@ for subject in subjects_8_to_9:
     col_9 = f"{subject}_{next_year}"
     
     if col_8 in df_growthrate.columns and col_9 in df_growthrate.columns:
-        # Only calculate growth where both values are not NaN
+        # Check if the student exists and if both 8th and 9th marks are not NaN
         condition = df_growthrate[col_8].notna() & df_growthrate[col_9].notna()
         growth_8_to_9[f"{subject}_Growth_{year}_to_{next_year}"] = np.where(
-            condition, df_growthrate[col_9] - df_growthrate[col_8], np.nan
+            condition, df_growthrate[col_9] - df_growthrate[col_8], 0  # Default to 0 if marks are missing
         )
     else:
-        growth_8_to_9[f"{subject}_Growth_{year}_to_{next_year}"] = np.nan
+        growth_8_to_9[f"{subject}_Growth_{year}_to_{next_year}"] = 0  # Default to 0 if columns are missing
 
 # Create DataFrame for the growth calculations
 growth_8_to_9_df = pd.DataFrame(growth_8_to_9)
 
-growth_8_to_9_df["Algebra_Growth_8_to_9"] = growth_8_to_9_df["Algebra_Growth_8_to_9"].fillna(0)
-growth_8_to_9_df
+# Save the growth to CSV file
+#growth_8_to_9_df.to_csv("Growth_8_to_9.csv", index=False)
 
-growth_8_to_9_df["Geometry_Growth_8_to_9"] = growth_8_to_9_df["Geometry_Growth_8_to_9"].fillna(0)
-growth_8_to_9_df
-
-growth_8_to_9_df["Defence_Growth_8_to_9"] = growth_8_to_9_df["Defence_Growth_8_to_9"].fillna(0)
-growth_8_to_9_df
-
-# Debugging: Check the final DataFrame for growth
+# Output the processed growth data (for debugging or inspection)
 print("Growth 8th to 9th:")
-growth_8_to_9_df
-
-
-
-# Optionally, save the growth to CSV file
-growth_8_to_9_df.to_csv("Growth_8_to_9.csv", index=False)
+print(growth_8_to_9_df)

@@ -54,9 +54,9 @@ def handle_interests_10th(row):
 final_merged_with_10th["Final_Interests_10th"] = final_merged_with_10th.apply(handle_interests_10th, axis=1)
 
 # Save the results to a new CSV file
-output_path = "Final_Interests_5th_6th_7th_8th_9th_10th.csv"
-final_merged_with_10th.to_csv(output_path, index=False)
-print(f"Results saved to {output_path}")
+#output_path = "Final_Interests_5th_6th_7th_8th_9th_10th.csv"
+# final_merged_with_10th.to_csv(output_path, index=False)
+# print(f"Results saved to {output_path}")
 
 print(final_merged_with_10th.columns)
 
