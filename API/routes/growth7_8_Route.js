@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); 
 
-router.get('/growth_7', (req, res) => {
+router.get('/growth_7_8', (req, res) => {
     const sqlQuery = 'SELECT * FROM Growth_7_to_8';
   
     db.query(sqlQuery, (err, results) => {
