@@ -61,3 +61,5 @@ overall_growth_df = pd.DataFrame(overall_growth)
 print("Overall Growth Rates:")
 #print(overall_growth_df.head())
 overall_growth_df
+overall_growth_df.dtypes
+
