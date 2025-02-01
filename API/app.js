@@ -8,12 +8,12 @@ const growth_8_9_Routes = require('./routes/growth8_9_Route');
 const growth_9_10_Routes = require('./routes/growth9_10_Route');
 
 
-app.use('/api', predictionRoutes);
-app.use('/api', growth_5_6_Routes);
-app.use('/', growth_6_7_Routes);
-app.use('/api', growth_7_8_Routes);
-app.use('/api', growth_8_9_Routes);
-app.use('/api', growth_9_10_Routes);
+app.use('/predictionapi', predictionRoutes);
+app.use('/predictionapi', growth_5_6_Routes);
+app.use('/predictionapi', growth_6_7_Routes);
+app.use('/predictionapi', growth_7_8_Routes);
+app.use('/predictionapi', growth_8_9_Routes);
+app.use('/predictionapi', growth_9_10_Routes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
